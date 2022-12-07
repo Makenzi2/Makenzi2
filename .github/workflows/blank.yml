@@ -1,0 +1,30 @@
+# Define a function to calculate the number of hours worked
+def calculate_hours(start_time, end_time):
+  # Calculate the difference between the start and end times
+  hours_worked = end_time - start_time
+
+  # If the difference is negative, add 24 hours to get the correct number of hours worked
+  if hours_worked < 0:
+    hours_worked += 24
+
+  return hours_worked
+
+# Define a function to record the start and end times for an employee
+def record_times(employee_name):
+  # Prompt the user for the start and end times
+  start_time = input("Enter the start time for {}: ".format(employee_name))
+  end_time = input("Enter the end time for {}: ".format(employee_name))
+
+  # Convert the start and end times to integers
+  start_time = int(start_time)
+  end_time = int(end_time)
+
+  # Calculate the number of hours worked
+  hours_worked = calculate_hours(start_time, end_time)
+
+  # Print the number of hours worked
+  print("{} worked {} hours".format(employee_name, hours_worked))
+
+# Record the times for two employees
+record_times("Alice")
+record_times("Bob")
